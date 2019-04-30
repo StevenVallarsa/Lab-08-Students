@@ -1,0 +1,11 @@
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/obj/Debug/netcoreapp2.1/Lab-08-Students.csprojAssemblyReference.cache
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/obj/Debug/netcoreapp2.1/Lab-08-Students.csproj.CoreCompileInputs.cache
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/obj/Debug/netcoreapp2.1/Lab-08-Students.AssemblyInfoInputs.cache
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/obj/Debug/netcoreapp2.1/Lab-08-Students.AssemblyInfo.cs
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/bin/Debug/netcoreapp2.1/Lab-08-Students.deps.json
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/bin/Debug/netcoreapp2.1/Lab-08-Students.runtimeconfig.json
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/bin/Debug/netcoreapp2.1/Lab-08-Students.runtimeconfig.dev.json
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/bin/Debug/netcoreapp2.1/Lab-08-Students.dll
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/bin/Debug/netcoreapp2.1/Lab-08-Students.pdb
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/obj/Debug/netcoreapp2.1/Lab-08-Students.dll
+/Users/Steve/Projects/Lab-08-Students/Lab-08-Students/obj/Debug/netcoreapp2.1/Lab-08-Students.pdb
