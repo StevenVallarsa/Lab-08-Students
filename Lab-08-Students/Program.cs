@@ -39,7 +39,14 @@ namespace Lab_08_Students
                 {
                     index = int.Parse(input);
                     returnString = GetStudent(index - 1);
-                    keepLooping = false;
+                    if (returnString == "Student not found. Try another index. ")
+                    {
+                        throw new Exception("Student not found. Try another index. ");
+                    }
+                    else
+                    {
+                        keepLooping = false;
+                    }
                 }
                 catch (FormatException)
                 {
@@ -51,7 +58,21 @@ namespace Lab_08_Students
                 }
 
             }
-            Console.WriteLine($"\nStudent {index} is {names[index - 1]}.");
+            try
+            {
+                if (index == 0)
+                {
+                    throw new IndexOutOfRangeException("Student not found. Try another index.");
+                }
+
+                Console.WriteLine($"\nStudent {index} is {names[index - 1]}.");
+
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             LearnMore(index);
 
         }
@@ -67,7 +88,7 @@ namespace Lab_08_Students
             {
                 if (index < 0 || index >= names.Count)
                 {
-                    throw new IndexOutOfRangeException("Student not found. Try another index.");
+                    throw new IndexOutOfRangeException("Student not found. Try another index. ");
                 }
                 // added "*" to separate name and town, and "^" to separate town and food
                 studentInfo = names[index] + "*" + towns[index] + "^" + foods[index];
@@ -107,34 +128,64 @@ namespace Lab_08_Students
 
         public static void LearnMore(int index)
         {
-            Console.Write($"\nWould you like to know about {names[index - 1].Substring(0, names[index - 1].IndexOf(' '))}? Enter \"hometown\" or \"favorite food\": ");
-            string knowMore = Console.ReadLine().ToLower();
+            Console.Write($"\nWould you like to know about {names[index - 1].Substring(0, names[index - 1].IndexOf(' '))}? \nEnter \"hometown\" or \"favorite food\": ");
 
-            try
+            bool keepLooping = true;
+
+            while (keepLooping)
             {
-                if (knowMore == "hometown")
+                string knowMore = Console.ReadLine().ToLower();
+
+                try
                 {
-                    Console.WriteLine($"{names[index - 1].Substring(0, names[index - 1].IndexOf(' '))} is from {towns[index - 1]}.");
+                    if (knowMore == "hometown")
+                    {
+                        Console.WriteLine($"{names[index - 1].Substring(0, names[index - 1].IndexOf(' '))} is from {towns[index - 1]}.");
+                        keepLooping = false;
+                    }
+                    else if (knowMore == "favorite food")
+                    {
+                        Console.WriteLine($"{names[index - 1].Substring(0, names[index - 1].IndexOf(' '))}'s favorite food is {foods[index - 1]}.");
+                        keepLooping = false;
+                    }
+                    else
+                    {
+                        throw new Exception("That data does not exist. \nPlease try again. (enter \"hometown\" or \"favorite food\") ");
+                    }
                 }
-                else if (knowMore == "favorite food")
+                catch (Exception e)
                 {
-                    Console.WriteLine($"{names[index - 1].Substring(0, names[index - 1].IndexOf(' '))}'s favorite food is {foods[index - 1]}.");
+                    Console.Write(e.Message);
                 }
-                else
-                {
-                    throw new Exception("Invalid Input");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
+
             }
 
             Console.Write("Would you like to know more? (yes/no) ");
+            keepLooping = true;
+
+            while (keepLooping)
+            {
+                string input = Console.ReadLine().ToLower();
+
+                if (input == "yes")
+                {
+                    LearnMore(index);
+                }
+                else if (input == "no")
+                {
+                    keepLooping = false;
+                }
+                else
+                {
+                    Console.Write("That's not a valid reply. Please try again. "); 
+                }
+
+            }
+
+            Console.WriteLine("Goodbye");
 
 
 
-            //Console.WriteLine("That data does not exist. Please try again. (enter \"hometown\" or \"favorite food\"");
 
         }
 
